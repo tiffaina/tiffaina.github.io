@@ -26,6 +26,7 @@ body {
     background-color: var(--off-white);
     color: var(--black);
     line-height: 1.6;
+    position: relative;
     overflow-x: hidden;
 }
 
@@ -38,8 +39,14 @@ body::before {
     background-size: 200px; /* adjust smaller/bigger */
     opacity: 0.06; /* keep it subtle and chic */
     pointer-events: none;
-    z-index: -1;
+    z-index: 0;
 }
+/* Ensure all site content appears above background */
+main, .section, .home-container, .sidebar, .content-container {
+    position: relative;
+    z-index: 1;
+}
+
 
 
 /* ===== NAVIGATION SIDEBAR ===== */
