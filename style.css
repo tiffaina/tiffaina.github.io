@@ -29,6 +29,19 @@ body {
     overflow-x: hidden;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("images-blog/flower.svg");
+    background-repeat: repeat;
+    background-size: 200px; /* adjust smaller/bigger */
+    opacity: 0.06; /* keep it subtle and chic */
+    pointer-events: none;
+    z-index: -1;
+}
+
+
 /* ===== NAVIGATION SIDEBAR ===== */
 .sidebar {
     position: fixed;
