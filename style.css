@@ -118,7 +118,7 @@ body {
     align-items: center;
     justify-content: center;
     animation: float 3s ease-in-out infinite;
-    /* overflow: hidden;  /* This clips the image to the circle */
+    overflow: hidden;  /* This clips the image to the circle */
 }
 
 .avatar img {
