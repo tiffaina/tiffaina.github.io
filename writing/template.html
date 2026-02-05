@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Title - Tiffney Aina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Blog post specific styles */
+        .post-container {
+            max-width: 750px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 40px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--black);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: var(--soft-blue);
+            transform: translateX(-4px);
+        }
+        
+        .back-link::before {
+            content: '← ';
+        }
+        
+        .post-header {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid var(--black);
+        }
+        
+        .post-title-main {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .post-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+        
+        .post-body {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .post-body h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-top: 60px;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+        
+        .post-body h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .post-body p {
+            margin-bottom: 24px;
+        }
+        
+        .post-body a {
+            color: var(--soft-blue);
+            text-decoration: none;
+            border-bottom: 2px solid var(--soft-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .post-body a:hover {
+            color: var(--black);
+            border-bottom-color: var(--black);
+        }
+        
+        .post-body blockquote {
+            margin: 40px 0;
+            padding: 30px;
+            background-color: white;
+            border-left: 4px solid var(--deep-red);
+            font-style: italic;
+        }
+        
+        .post-body ul,
+        .post-body ol {
+            margin-bottom: 24px;
+            padding-left: 30px;
+        }
+        
+        .post-body li {
+            margin-bottom: 12px;
+        }
+        
+        .post-body code {
+            font-family: 'Space Mono', monospace;
+            background-color: var(--light-gray);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        
+        .post-body pre {
+            background-color: var(--black);
+            color: var(--off-white);
+            padding: 20px;
+            overflow-x: auto;
+            margin: 30px 0;
+            border: 2px solid var(--black);
+        }
+        
+        .post-body pre code {
+            background: none;
+            padding: 0;
+            color: var(--off-white);
+        }
+        
+        .post-body img {
+            width: 100%;
+            height: auto;
+            margin: 40px 0;
+            border: 2px solid var(--black);
+        }
+        
+        .post-footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 2px solid var(--black);
+        }
+        
+        .post-footer p {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .post-container {
+                padding: 0 30px;
+                margin: 60px auto;
+            }
+            
+            .post-body h2 {
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="post-container">
+        <a href="../index.html#writing" class="back-link">Back to writing</a>
+        
+        <article>
+            <header class="post-header">
+                <h1 class="post-title-main">Your Post Title Here</h1>
+                <div class="post-meta">
+                    <span>February 2026</span>
+                    <span>•</span>
+                    <span>8 min read</span>
+                </div>
+            </header>
+            
+            <div class="post-body">
+                <p>
+                    Your introduction paragraph goes here. Hook the reader with a question, 
+                    observation, or story that sets up what you'll explore.
+                </p>
+                
+                <h2>First Section Heading</h2>
+                
+                <p>
+                    Your content here. Use specific examples from your research and experience. 
+                    What have you observed? What surprised you? What questions are you wrestling with?
+                </p>
+                
+                <p>
+                    Make it personal. The best writing comes from genuine curiosity and 
+                    honest reflection on what you don't fully understand yet.
+                </p>
+                
+                <h2>Second Section Heading</h2>
+                
+                <p>
+                    More content. Break complex ideas into digestible chunks. Use examples 
+                    that make abstract concepts concrete.
+                </p>
+                
+                <blockquote>
+                    "Pull quotes or emphasis points can go here. Use these sparingly for 
+                    maximum impact."
+                </blockquote>
+                
+                <h3>A Subsection If Needed</h3>
+                
+                <p>
+                    You can nest ideas with H3s when appropriate. But don't over-structure—
+                    let the writing flow naturally.
+                </p>
+                
+                <ul>
+                    <li>You can use bullet points for lists</li>
+                    <li>Keep them concise and parallel</li>
+                    <li>Each point should add value</li>
+                </ul>
+                
+                <h2>Conclusion</h2>
+                
+                <p>
+                    Wrap up your thoughts. What are you still thinking about? What questions 
+                    remain open? The best essays don't resolve everything neatly—they invite 
+                    the reader to keep thinking alongside you.
+                </p>
+                
+                <p>
+                    End with something memorable. A question, an image, a challenge. Give 
+                    them something to carry with them.
+                </p>
+            </div>
+            
+            <footer class="post-footer">
+                <p>
+                    Thanks for reading. Have thoughts? Disagree with something? 
+                    <a href="mailto:your.email@example.com">Let me know</a>.
+                </p>
+            </footer>
+        </article>
+    </div>
+</body>
+</html>
