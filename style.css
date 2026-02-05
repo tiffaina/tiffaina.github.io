@@ -132,6 +132,8 @@ main, .section, .home-container, .sidebar, .content-container {
     width: 200px;
     height: 200px;
     background-color: transparent;  /* Remove blue background */
+    position: relative;
+    z-index: 2;
     border-radius: 50%;
     border: 6px solid var(--black);
     display: flex;
