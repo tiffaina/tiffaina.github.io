@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What 'Accountability' Actually Means When Building Medical AI - Tiffney Aina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Blog post specific styles */
+        .post-container {
+            max-width: 750px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 40px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--black);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: var(--soft-blue);
+            transform: translateX(-4px);
+        }
+        
+        .back-link::before {
+            content: '← ';
+        }
+        
+        .post-header {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid var(--black);
+        }
+        
+        .post-title-main {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3rem);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .post-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+        
+        .post-body {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .post-body h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-top: 60px;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+        
+        .post-body h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .post-body p {
+            margin-bottom: 24px;
+        }
+        
+        .post-body a {
+            color: var(--soft-blue);
+            text-decoration: none;
+            border-bottom: 2px solid var(--soft-blue);
+            transition: all 0.3s ease;
+        }
+        
+        .post-body a:hover {
+            color: var(--black);
+            border-bottom-color: var(--black);
+        }
+        
+        .post-body blockquote {
+            margin: 40px 0;
+            padding: 30px;
+            background-color: white;
+            border-left: 4px solid var(--deep-red);
+            font-style: italic;
+        }
+        
+        .post-body ul,
+        .post-body ol {
+            margin-bottom: 24px;
+            padding-left: 30px;
+        }
+        
+        .post-body li {
+            margin-bottom: 12px;
+        }
+        
+        .post-footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 2px solid var(--black);
+        }
+        
+        .post-footer p {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .post-container {
+                padding: 0 30px;
+                margin: 60px auto;
+            }
+            
+            .post-body h2 {
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="post-container">
+        <a href="../index.html#writing" class="back-link">Back to writing</a>
+        
+        <article>
+            <header class="post-header">
+                <h1 class="post-title-main">What 'Accountability' Actually Means When Building Medical AI</h1>
+                <div class="post-meta">
+                    <span>February 2026</span>
+                    <span>•</span>
+                    <span>7 min read</span>
+                </div>
+            </header>
+            
+            <div class="post-body">
+                <p>
+                    I'm sitting in a radiology reading room at AP-HP Pitié-Salpêtrière, watching a 
+                    radiologist scroll through spine CT scans. She pauses on one, points to a vertebra 
+                    that looks slightly off to me, and says: "Transitional anomaly. The model missed it."
+                </p>
+                
+                <p>
+                    This is the moment where accountability stops being a buzzword and becomes a real problem. 
+                    The foundation model I'm working with flagged dozens of normal variations as anomalies, 
+                    but missed this one—a case where clinical intervention might actually matter. So who's 
+                    responsible? Me, for how I fine-tuned it? The team that trained the foundation model? 
+                    The hospital that deployed it? The radiologist who trusted it?
+                </p>
+
+                <p>
+                    The answer is: it's complicated. And that's the problem.
+                </p>
+                
+                <h2>The Accountability Vacuum</h2>
+                
+                <p>
+                    Healthcare has always had clear accountability structures. When something goes wrong, 
+                    there's a chain of responsibility: the attending physician, the resident, the nurse, 
+                    the hospital system. Everyone knows who answers for what. Medical malpractice law, 
+                    licensing boards, hospital review committees—these exist because when you're dealing 
+                    with human lives, someone needs to be accountable.
+                </p>
+                
+                <p>
+                    AI breaks this. Not because the technology is magic, but because it fragments 
+                    decision-making across so many actors that traditional accountability structures 
+                    don't know where to land.
+                </p>
+
+                <p>
+                    Consider the typical pipeline for a medical AI model reaching a patient:
+                </p>
+
+                <ul>
+                    <li>Researchers publish a foundation model trained on millions of images</li>
+                    <li>A company fine-tunes it for a specific clinical task</li>
+                    <li>A hospital licenses and deploys it in their radiology workflow</li>
+                    <li>A radiologist uses its outputs to inform their diagnosis</li>
+                    <li>A patient receives treatment based on that diagnosis</li>
+                </ul>
+
+                <p>
+                    If the model is wrong and the patient is harmed, who's liable? The researchers who 
+                    trained the base model can say "we published limitations and never claimed clinical 
+                    validity." The company can say "we validated on our test set and performance was 
+                    within acceptable bounds." The hospital can say "our radiologists have final say." 
+                    The radiologist can say "the model was FDA-cleared and I trusted it."
+                </p>
+
+                <p>
+                    Everyone has a defensible position. No one is clearly responsible.
+                </p>
+                
+                <h2>What Makes Medical AI Different</h2>
+                
+                <p>
+                    You might be thinking: isn't this just like any other medical device? If an MRI machine 
+                    malfunctions, we have protocols. If a drug has unforeseen side effects, we have reporting 
+                    systems. Why should AI be different?
+                </p>
+
+                <p>
+                    The difference is opacity and adaptability. An MRI machine is a static piece of hardware 
+                    with predictable failure modes. A drug's mechanism of action can be studied and understood. 
+                    But a deep learning model trained on millions of images is fundamentally different from 
+                    either—it's making decisions based on patterns that even its creators can't fully articulate, 
+                    and those patterns can shift as data distributions change.
+                </p>
+
+                <p>
+                    When I'm working on spine morphometrics, I can tell you that my model looks at vertebral 
+                    shape, spacing, alignment. But I can't tell you exactly <em>why</em> it flagged a particular 
+                    scan as anomalous. The features it learned are distributed across millions of parameters. 
+                    There's no single decision rule I can point to and say "here's where it went wrong."
+                </p>
+
+                <p>
+                    This opacity matters for accountability because you can't fix what you can't see. If a 
+                    radiologist makes a diagnostic error, you can review their reasoning, identify where 
+                    the logic broke down, and provide targeted training. If a model makes an error, you 
+                    retrain on more data and hope the problem doesn't recur—but you don't really know <em>why</em> 
+                    it happened or if your fix addressed the root cause.
+                </p>
+                
+                <h2>The Explainability Trap</h2>
+                
+                <p>
+                    The standard response to this opacity problem is: make the models explainable. Show 
+                    saliency maps. Generate attention visualizations. Provide feature importance scores. 
+                    Let clinicians "see" what the model is looking at.
+                </p>
+
+                <p>
+                    I'm skeptical of this as a solution to accountability. Not because explainability isn't 
+                    valuable—it is. But because what counts as an "explanation" in machine learning research 
+                    is often not what counts as an explanation in clinical practice.
+                </p>
+
+                <p>
+                    A saliency map showing that my model paid attention to L5-S1 region when flagging an 
+                    anomaly is interesting. But it doesn't tell a radiologist <em>what pattern</em> the model 
+                    saw or whether that pattern is clinically meaningful. It's like showing someone a heatmap 
+                    of where you looked while reading a medical chart and claiming that explains your diagnosis. 
+                    The <em>where</em> doesn't capture the <em>why</em>.
+                </p>
+
+                <blockquote>
+                    Explainability techniques give us the illusion of understanding without the substance. 
+                    And that illusion might be more dangerous than admitting we don't know.
+                </blockquote>
+
+                <p>
+                    Real clinical accountability requires understanding failure modes—not just seeing where 
+                    the model looked, but knowing what specific clinical scenarios it's likely to miss, what 
+                    types of edge cases break it, what happens when imaging quality degrades. That level of 
+                    understanding requires extensive prospective validation, not just attention weights.
+                </p>
+                
+                <h2>What Accountability Could Look Like</h2>
+                
+                <p>
+                    So if current accountability structures don't work and explainability isn't a silver bullet, 
+                    what does responsible deployment of medical AI actually require?
+                </p>
+
+                <p>
+                    I think it starts with being honest about uncertainty. Models should come with not just 
+                    accuracy metrics but detailed failure mode documentation. Here's what our model is good at. 
+                    Here's where it breaks. Here's how performance degrades with different scanners, patient 
+                    populations, image quality levels. Here are the cases where you absolutely cannot trust it.
+                </p>
+
+                <p>
+                    It also requires continuous monitoring in deployment. Medical AI shouldn't be "cleared" 
+                    once and then forgotten. Performance should be tracked over time, with clear thresholds 
+                    for when a model needs to be retrained or retired. When data distributions shift—new 
+                    scanner protocols, different patient demographics, evolving clinical practices—we need 
+                    systems to detect that drift before it leads to harm.
+                </p>
+
+                <p>
+                    And critically, accountability needs to flow upstream. If a company deploys a model 
+                    that fails in predictable ways that they should have caught in validation, they should 
+                    be liable. If a hospital deploys a model without proper integration into clinical workflows 
+                    or clinician training, they should be liable. If a researcher publishes a model with known 
+                    limitations that are buried in supplementary materials while promoting clinical applications, 
+                    they should be liable.
+                </p>
+
+                <p>
+                    This isn't about stifling innovation. It's about making sure that the people building and 
+                    deploying these systems have real skin in the game when things go wrong.
+                </p>
+                
+                <h2>Living in the Uncertainty</h2>
+                
+                <p>
+                    The thing I keep coming back to: we're building these systems now, deploying them now, 
+                    affecting patient care now—all while the accountability structures are still being figured out.
+                </p>
+
+                <p>
+                    That radiologist who found the anomaly my model missed? She didn't stop using the model. 
+                    She just learned to trust it less for that specific type of case. Over time, she's building 
+                    her own mental model of what the AI is good for and where human judgment needs to override it. 
+                    This is adaptation, and it's happening in hospitals everywhere.
+                </p>
+
+                <p>
+                    But individual adaptation isn't the same as systematic accountability. We need structures 
+                    that work at scale, that protect patients even when individual clinicians haven't yet learned 
+                    a model's quirks through trial and error.
+                </p>
+
+                <p>
+                    I don't have a neat answer for how to build those structures. What I do know is that we 
+                    can't keep pretending the old frameworks will work, or that technical solutions like 
+                    explainability will paper over the fundamental problem. Accountability in medical AI is 
+                    a sociotechnical challenge, and it's going to require more than just better algorithms.
+                </p>
+
+                <p>
+                    It's going to require us to be honest about what we don't know, what we can't predict, and 
+                    who should answer when things go wrong. And right now, we're not even having that conversation 
+                    seriously enough.
+                </p>
+            </div>
+            
+            <footer class="post-footer">
+                <p>
+                    Thanks for reading. Disagree? Have a different perspective on this? I'd love to hear it—
+                    <a href="mailto:your.email@example.com">let me know</a>.
+                </p>
+            </footer>
+        </article>
+    </div>
+</body>
+</html>
